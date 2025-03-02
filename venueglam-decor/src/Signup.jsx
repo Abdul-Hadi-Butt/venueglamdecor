@@ -1,29 +1,30 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import "./styles.css"; 
+import { useNavigate } from "react-router-dom";
+import "./auth.css"; // Same CSS file
 
 const Signup = () => {
+  const navigate = useNavigate();
+
+  const handleSignup = (e) => {
+    e.preventDefault();
+    navigate("/home"); // Redirect to Home Page after signup
+  };
+
   return (
-    <div className="container">
-      <h2>Sign Up</h2>
-      <form>
-        <div className="form-group">
-          <label>Full Name</label>
-          <input type="text" placeholder="Enter your name" required />
-        </div>
-        <div className="form-group">
-          <label>Email</label>
-          <input type="email" placeholder="Enter your email" required />
-        </div>
-        <div className="form-group">
-          <label>Password</label>
-          <input type="password" placeholder="Create a password" required />
-        </div>
-        <button type="submit" className="btn">Sign Up</button>
-      </form>
-      <p className="redirect-text">
-        Already have an account? <Link to="/login">Login here</Link>
-      </p>
+    <div className="auth-container">
+      <div className="auth-form">
+        <h2>Sign Up</h2>
+        <form onSubmit={handleSignup}>
+          <input type="text" placeholder="Full Name" required />
+          <input type="email" placeholder="Email" required />
+          <input type="password" placeholder="Password" required />
+          <button type="submit">Sign Up</button>
+        </form>
+        <p>
+          Already have an account?{" "}
+          <span onClick={() => navigate("/login")}>Login</span>
+        </p>
+      </div>
     </div>
   );
 };
