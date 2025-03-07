@@ -3,31 +3,36 @@
     height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center;
-    background: url("/s.jpg") center/cover no-repeat;
-  }
-  
-  .about-content {
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    padding: 30px;
+    justify-content: flex-start; /* Align content to the left */
+    padding-left: 5%; /* Moved further left */
+    background: url("/contactus1.jpg") center/cover no-repeat;
+}
+
+/* About Content */
+.about-content {
+    background: rgba(0, 0, 0, 0.6); /* Slight transparency for readability */
+    padding: 20px;
     border-radius: 10px;
-    text-align: center;
-    max-width: 600px;
-    color: white;
-  }
-  
-  .about-content h1 {
+    width: 40%;
+    max-width: 500px;
+}
+
+/* Heading */
+.about-content h1 {
     font-size: 32px;
     margin-bottom: 10px;
-  }
-  
-  .about-content p {
+    color: #ebeef1; /* Dark Blue Heading */
+}
+
+/* Paragraph */
+.about-content p {
     font-size: 18px;
     margin: 10px 0;
-  }
-  
-  .back-btn {
+    color: #ebeef1;
+}
+
+/* Back Button */
+.back-btn {
     margin-top: 20px;
     padding: 10px 20px;
     background: rgba(0, 0, 0, 0.7);
@@ -36,9 +41,20 @@
     border-radius: 5px;
     cursor: pointer;
     transition: 0.3s ease-in-out;
-  }
-  
-  .back-btn:hover {
+}
+
+.back-btn:hover {
     background: rgba(255, 255, 255, 0.3);
-  }
-  
+}
+
+/* Responsive Fix */
+@media (max-width: 768px) {
+    .about-container {
+        justify-content: center; /* Center on smaller screens */
+        padding-left: 0;
+    }
+
+    .about-content {
+        text-align: center;
+    }
+}

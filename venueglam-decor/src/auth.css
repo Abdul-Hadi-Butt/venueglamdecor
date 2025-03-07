@@ -1,23 +1,25 @@
-/* Centering Login/Signup Page */
+/* Full-Screen Background */
 .auth-container {
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url("/sl.jpg") center/cover no-repeat; /* Background Image */
-  backdrop-filter: brightness(0.5); /* Darken Background */
+  position: relative;
+  overflow: hidden;
+  background: url("/bg2.jpg") center/cover no-repeat;
+  background-size: 100%; /* Adjust this value */
+  image-rendering: crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
 }
-
-/* Blurred Form Box */
+/* Semi-Transparent Form Box */
 .auth-form {
-  background: rgba(255, 255, 255, 0.2); /* Semi-transparent */
-  backdrop-filter: blur(10px); /* Blur Effect */
+  background: rgba(255, 255, 255, 0.6); /* Light Transparency */
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   text-align: center;
-  color: white;
-  width: 300px;
+  color: #333;
+  width: 350px;
 }
 
 /* Form Inputs */
@@ -28,13 +30,16 @@
   border: none;
   border-radius: 5px;
   font-size: 16px;
+  background: rgba(255, 255, 255, 0.9); /* Slight Transparency */
+  color: #333;
+  border: 1px solid #ccc;
 }
 
 /* Button Styling */
 .auth-form button {
   width: 100%;
   padding: 10px;
-  background: #6a11cb;
+  background: #6a11cb; /* Purplish Theme */
   color: white;
   border: none;
   border-radius: 5px;
@@ -52,6 +57,7 @@
 }
 
 .auth-form span {
-  color: #ffcc00;
+  color: #6a11cb;
   cursor: pointer;
+  font-weight: bold;
 }
