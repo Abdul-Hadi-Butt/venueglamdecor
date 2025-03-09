@@ -118,6 +118,22 @@
     background-color: #548ebd; /* Navbar Blue */
     color: white;
 }
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .logo-img {
+    width: 50px; /* Adjust size as needed */
+    height: auto;
+  }
+  
+  .logo-text {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
 
 /* ========== Responsive Fixes ========== */
 @media (max-width: 1024px) {

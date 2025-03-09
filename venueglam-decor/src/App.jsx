@@ -7,6 +7,7 @@ import AboutUs from "./AboutUs";
 import Contact from "./Contact";  
 import Services from "./Services";
 import BirthdayDecor from "./birthdaydecor"; 
+import AnniversaryDecor from "./anniversary";
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
         <Route path="/contact" element={<Contact />} />  
         <Route path="/services" element={<Services />} /> 
         <Route path="/birthday-decor" element={<BirthdayDecor/>} />
+        <Route path="/anniversary-decor" element={<AnniversaryDecor/>} />
       </Routes>
     </Router>
   );

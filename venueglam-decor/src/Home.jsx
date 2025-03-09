@@ -10,7 +10,10 @@ const Home = () => {
     <div className="home-container">
       {/* Navbar */}
       <nav className="navbar">
-        <h2 className="logo">VenueGlam Decor</h2>
+        <div className="logo-container">
+          <img src="/logo.jpg" alt="VenueGlam Decor Logo" className="logo-img" />
+          <h2 className="logo-text">VenueGlam Decor</h2>
+        </div>
         <ul className="nav-links">
           <li onClick={() => navigate("/home")}>🏠 Home</li>
           <li onClick={() => navigate("/services")}>🛠 Services</li>
@@ -32,7 +35,7 @@ const Home = () => {
         <div className="decor-box engagement">💍 Engagement Decor</div>
         <div className="decor-box party">🎉 Party Decor</div>
         <div className="decor-box graduation">🎓 Graduation Decor</div>
-        <div className="decor-box anniversary">❤️ Anniversaries Decor</div>
+        <div className="decor-box anniversary" onClick={()=> navigate("/anniversary-decor")}>❤️ Anniversaries Decor</div>
         <div className="decor-box home">🏠 Home Decor</div>
         <div className="decor-box others">🏢 Others</div>
       </div>

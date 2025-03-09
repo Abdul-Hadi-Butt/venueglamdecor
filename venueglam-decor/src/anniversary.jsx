@@ -1,8 +1,8 @@
 import { useState } from "react";
-import "./birthdaydecor.css";
+import "./anniversary.css";
 import { Search, ChevronDown, Phone, MessageCircle, Menu, User, Heart, Star } from "lucide-react";
 
-export default function BirthdayDecor() {
+export default function AnniversaryDecor() {
   const [viewMode, setViewMode] = useState("list");
 
   return (
@@ -41,9 +41,9 @@ export default function BirthdayDecor() {
       {/* Main Content */}
       <main className="main-content">
         <div className="page-header">
-          <h1>Find the Best Birthday Decor Services</h1>
+          <h1>Find the Best Anniversary Decor Services</h1>
           <p className="description">
-            Browse top birthday decoration services in Lahore, Karachi, Islamabad, and Rawalpindi to make your events unforgettable!
+            Browse top anniversary decoration services in Lahore, Karachi, Islamabad, and Rawalpindi to make your events unforgettable!
           </p>
         </div>
 
@@ -115,7 +115,7 @@ export default function BirthdayDecor() {
           {/* Results Section */}
           <div className="results-container">
             <div className="results-header">
-              <div className="results-count">Showing 10 of 30 Results</div>
+              <div className="results-count">Showing 2 of 2 Results</div>
 
               <div className="results-actions">
                 <div className="view-options">
@@ -156,26 +156,26 @@ export default function BirthdayDecor() {
               {/* Birthday Decor Services */}
               {[
                 {
-                  name: "Elegant Decor and Events",
-                  discount: "15% Off",
+                  name: "Aesthetic  Events",
+                  discount: "20% Off",
                   rating: "9.5",
-                  reviews: "4.7 (40)",
+                  reviews: "5.0 (40)",
                   location: "Gulberg, Lahore",
-                  price: "Starting at PKR 30,000",
+                  price: "Starting at PKR 20,000",
                   contact: "📞 Contact: 0303-4844244",
-                  image: "/birthdaydecor1.jpg",
+                  image: "/anniversarydecor1.jpg",
                   description:
-                    "We offer theme-based birthday decorations with customized balloon setups, cake tables, and lighting.",
+                    "We offer theme-based Anniversary decorations with customized balloon setups, cake tables, and lighting.",
                 },
                 {
-                  name: "Classical Decors",
+                  name: "Orignal Decors",
                   rating: "4.8 (22)",
                   location: "Clifton, Karachi",
-                  price: "Starting at PKR 40,000",
+                  price: "Starting at PKR 30,000",
                   contact: "📞 Contact: 0303-4844244",
-                  image: "/birthdaydecor2.jpg",
+                  image: "/anniversarydecor2.jpg",
                   description:
-                    "Affordable birthday party decor with backdrops, themed arrangements, and LED lighting.",
+                    "Affordable Anniversary event decor with backdrops, themed arrangements, and LED lighting.",
                 },
               ].map((vendor, index) => (
                 <div key={index} className="result-item">
