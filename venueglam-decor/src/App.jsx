@@ -4,7 +4,9 @@ import Login from "./Login";
 import Signup from "./Signup";
 import Home from "./Home";
 import AboutUs from "./AboutUs";
-import Contact from "./Contact";  // Import Contact page
+import Contact from "./Contact";  
+import Services from "./Services";
+import BirthdayDecor from "./birthdaydecor"; 
 
 const App = () => {
   return (
@@ -15,7 +17,9 @@ const App = () => {
         <Route path="/signup" element={<Signup />} />
         <Route path="/home" element={<Home />} />
         <Route path="/about" element={<AboutUs />} />
-        <Route path="/contact" element={<Contact />} />  {/* Add Contact Route */}
+        <Route path="/contact" element={<Contact />} />  
+        <Route path="/services" element={<Services />} /> 
+        <Route path="/birthday-decor" element={<BirthdayDecor/>} />
       </Routes>
     </Router>
   );

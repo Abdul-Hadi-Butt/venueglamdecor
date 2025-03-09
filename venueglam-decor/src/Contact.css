@@ -33,4 +33,19 @@
   .help-info {
     margin-top: 20px;
   }
-  
+  /* Back to Home Button */
+.back-home-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: black; /* Black button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    font-size: 1rem;
+}
+
+.back-home-btn:hover {
+    background: #333; /* Dark gray on hover */
+}
