@@ -8,6 +8,11 @@ import Contact from "./Contact";
 import Services from "./Services";
 import BirthdayDecor from "./birthdaydecor"; 
 import AnniversaryDecor from "./anniversary";
+import EngagmentDecor from "./engagmentdecor";
+import GraduationDecor from "./graduation";
+import PartyDecor from "./party";
+import HomeDecor from "./homedecor";
+
 
 const App = () => {
   return (
@@ -22,6 +27,10 @@ const App = () => {
         <Route path="/services" element={<Services />} /> 
         <Route path="/birthday-decor" element={<BirthdayDecor/>} />
         <Route path="/anniversary-decor" element={<AnniversaryDecor/>} />
+        <Route path="/engagment-decor" element={<EngagmentDecor/>} />
+        <Route path="/graduation-decor" element={<GraduationDecor/>} />
+        <Route path="/party-decor" element={<PartyDecor/>} />
+        <Route path="/home-decor" element={<HomeDecor/>} />
       </Routes>
     </Router>
   );

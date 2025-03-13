@@ -32,11 +32,11 @@ const Home = () => {
         <div className="decor-box birthday" onClick={() => navigate("/birthday-decor")}>
           🎂 Birthday Decor
         </div>
-        <div className="decor-box engagement">💍 Engagement Decor</div>
-        <div className="decor-box party">🎉 Party Decor</div>
-        <div className="decor-box graduation">🎓 Graduation Decor</div>
+        <div className="decor-box engagement" onClick={()=> navigate("/engagment-decor")}>💍 Engagement Decor</div>
+        <div className="decor-box party" onClick={()=> navigate("/party-decor")}>🎉 Party Decor</div>
+        <div className="decor-box graduation" onClick={()=> navigate("/graduation-decor")}>🎓 Graduation Decor</div>
         <div className="decor-box anniversary" onClick={()=> navigate("/anniversary-decor")}>❤️ Anniversaries Decor</div>
-        <div className="decor-box home">🏠 Home Decor</div>
+        <div className="decor-box home" onClick={()=> navigate("/home-decor")}>🏠 Home Decor</div>
         <div className="decor-box others">🏢 Others</div>
       </div>
 
