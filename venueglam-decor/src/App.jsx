@@ -6,7 +6,7 @@ import Home from "./Home";
 import AboutUs from "./AboutUs";
 import Contact from "./Contact";  
 import Services from "./Services";
-import BirthdayDecor from "./birthdaydecor"; 
+import BirthdayDecor from "./birthday"; 
 import AnniversaryDecor from "./anniversary";
 import EngagmentDecor from "./engagmentdecor";
 import GraduationDecor from "./graduation";
