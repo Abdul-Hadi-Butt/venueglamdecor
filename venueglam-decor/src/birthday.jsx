@@ -1,18 +1,61 @@
 import { useState } from "react";
 import "./birthdaydecor.css";
-import { Search, ChevronDown, Phone, MessageCircle, Menu, User, Heart, Star } from "lucide-react";
+import {
+  Search,
+  ChevronDown,
+  Phone,
+  MessageCircle,
+  Menu,
+  User,
+  Heart,
+  Star,
+  X
+} from "lucide-react";
 
 export default function BirthdayDecor() {
   const [viewMode, setViewMode] = useState("list");
+  const [modalImage, setModalImage] = useState(null);
+
+  const openImageModal = (imageUrl) => {
+    setModalImage(imageUrl);
+  };
+
+  const closeModal = () => {
+    setModalImage(null);
+  };
+
+  const birthdayVendors = [
+    {
+      name: "Elegant Decor and Events",
+      discount: "15% Off",
+      rating: "9.5",
+      reviews: "4.7 (40)",
+      location: "Gulberg, Lahore",
+      price: "Starting at PKR 30,000",
+      contact: "📞 Contact: 0303-4844244",
+      image: "/birthdaydecor1.jpg",
+      description:
+        "We offer theme-based birthday decorations with customized balloon setups, cake tables, and lighting.",
+    },
+    {
+      name: "Classical Decors",
+      rating: "4.8 (22)",
+      location: "Clifton, Karachi",
+      price: "Starting at PKR 40,000",
+      contact: "📞 Contact: 0303-4844244",
+      image: "/birthdaydecor2.jpg",
+      description:
+        "Affordable birthday party decor with backdrops, themed arrangements, and LED lighting.",
+    },
+  ];
 
   return (
     <div className="venuglam-container">
-      {/* Header/Navigation */}
+      {/* Header */}
       <header className="header">
         <div className="logo-container">
           <img src="/logo.jpg" alt="VenueGlam Decor Logo" className="logo" />
         </div>
-
         <nav className="main-nav">
           <ul>
             <li className="nav-item">Home</li>
@@ -23,14 +66,11 @@ export default function BirthdayDecor() {
             <li className="nav-item">Contact</li>
           </ul>
         </nav>
-
         <div className="header-actions">
           <button className="btn-search">
             <Search size={20} />
           </button>
-
           <button className="btn-list-business">List your Venue</button>
-
           <button className="btn-user">
             <Menu size={16} />
             <User size={16} className="user-icon" />
@@ -38,7 +78,7 @@ export default function BirthdayDecor() {
         </div>
       </header>
 
-      {/* Main Content */}
+      {/* Main */}
       <main className="main-content">
         <div className="page-header">
           <h1>Find the Best Birthday Decor Services</h1>
@@ -48,20 +88,17 @@ export default function BirthdayDecor() {
         </div>
 
         <div className="content-container">
-          {/* Filters Section */}
+          {/* Filters */}
           <aside className="filters">
             <div className="filter-header">
               <h2>FILTER</h2>
               <ChevronDown size={20} />
             </div>
-
-            {/* City Filter */}
             <div className="filter-section">
               <div className="filter-title">
                 <h3>City</h3>
                 <ChevronDown size={20} />
               </div>
-
               <div className="filter-options">
                 {["Lahore", "Karachi", "Islamabad", "Rawalpindi"].map((city) => (
                   <label key={city} className="checkbox-label">
@@ -71,79 +108,22 @@ export default function BirthdayDecor() {
                 ))}
               </div>
             </div>
-
-            {/* Budget Filter */}
-            <div className="filter-section">
-              <div className="filter-title">
-                <h3>Budget (PKR)</h3>
-                <ChevronDown size={20} />
-              </div>
-
-              <div className="filter-options">
-                {["0 - 50,000", "50,001 - 100,000", "100,000+"].map((budget, index) => (
-                  <label key={index} className="checkbox-label">
-                    <input type="checkbox" name="budget" value={budget} />
-                    {budget}
-                  </label>
-                ))}
-              </div>
-            </div>
-
-            {/* Rating Filter */}
-            <div className="filter-section">
-              <div className="filter-title">
-                <h3>Rating</h3>
-                <ChevronDown size={20} />
-              </div>
-
-              <div className="filter-options">
-                {[5, 4, 3, 2, 1].map((rating) => (
-                  <label key={rating} className="checkbox-label">
-                    <input type="checkbox" name="rating" value={rating} />
-                    {Array(rating)
-                      .fill(<Star fill="#ff9800" color="#ff9800" size={16} />)
-                      .map((star, index) => (
-                        <span key={index}>{star}</span>
-                      ))}
-                    {rating} Star
-                  </label>
-                ))}
-              </div>
-            </div>
           </aside>
 
-          {/* Results Section */}
+          {/* Results */}
           <div className="results-container">
             <div className="results-header">
               <div className="results-count">Showing 10 of 30 Results</div>
-
               <div className="results-actions">
                 <div className="view-options">
                   <span>VIEW</span>
-                  <button 
-                    className={`view-btn ${viewMode === "list" ? "active" : ""}`} 
-                    onClick={() => setViewMode("list")}
-                  >
-                    <div className="list-icon">
-                      <div></div>
-                      <div></div>
-                      <div></div>
-                    </div>
+                  <button className={`view-btn ${viewMode === "list" ? "active" : ""}`} onClick={() => setViewMode("list")}>
+                    <div className="list-icon"><div></div><div></div><div></div></div>
                   </button>
-
-                  <button 
-                    className={`view-btn ${viewMode === "grid" ? "active" : ""}`} 
-                    onClick={() => setViewMode("grid")}
-                  >
-                    <div className="grid-icon">
-                      <div></div>
-                      <div></div>
-                      <div></div>
-                      <div></div>
-                    </div>
+                  <button className={`view-btn ${viewMode === "grid" ? "active" : ""}`} onClick={() => setViewMode("grid")}>
+                    <div className="grid-icon"><div></div><div></div><div></div><div></div></div>
                   </button>
                 </div>
-
                 <div className="sort-options">
                   <span>SORT BY:</span>
                   <span className="sort-value">POPULARITY</span>
@@ -153,62 +133,34 @@ export default function BirthdayDecor() {
             </div>
 
             <div className="results-list">
-              {/* Birthday Decor Services */}
-              {[
-                {
-                  name: "Elegant Decor and Events",
-                  discount: "15% Off",
-                  rating: "9.5",
-                  reviews: "4.7 (40)",
-                  location: "Gulberg, Lahore",
-                  price: "Starting at PKR 30,000",
-                  contact: "📞 Contact: 0303-4844244",
-                  image: "/birthdaydecor1.jpg",
-                  description:
-                    "We offer theme-based birthday decorations with customized balloon setups, cake tables, and lighting.",
-                },
-                {
-                  name: "Classical Decors",
-                  rating: "4.8 (22)",
-                  location: "Clifton, Karachi",
-                  price: "Starting at PKR 40,000",
-                  contact: "📞 Contact: 0303-4844244",
-                  image: "/birthdaydecor2.jpg",
-                  description:
-                    "Affordable birthday party decor with backdrops, themed arrangements, and LED lighting.",
-                },
-              ].map((vendor, index) => (
+              {birthdayVendors.map((vendor, index) => (
                 <div key={index} className="result-item">
                   <div className="result-image">
-                    <img src={vendor.image} alt={vendor.name} className="vendor-image" />
+                    <img
+                      src={vendor.image}
+                      alt={vendor.name}
+                      className="vendor-image"
+                      onClick={() => openImageModal(vendor.image)}
+                      style={{ cursor: "pointer" }}
+                    />
                   </div>
-
                   <div className="result-details">
                     <div className="result-header">
                       <h2 className="vendor-name">{vendor.name}</h2>
                       {vendor.discount && <div className="discount-badge">{vendor.discount}</div>}
                     </div>
-
                     <div className="vendor-ratings">
                       <div className="rating-item">
                         <Heart className="heart-icon" fill="#e91e63" color="#e91e63" />
                         <span>{vendor.rating}</span>
                       </div>
-
                       <div className="rating-item">
                         <Star className="star-icon" fill="#ff9800" color="#ff9800" />
                         <span>{vendor.reviews}</span>
                       </div>
                     </div>
-
-                    <div className="vendor-location">
-                      <span>{vendor.location}</span>
-                    </div>
-
-                    <div className="vendor-description">
-                      <p>{vendor.description}</p>
-                    </div>
-
+                    <div className="vendor-location"><span>{vendor.location}</span></div>
+                    <div className="vendor-description"><p>{vendor.description}</p></div>
                     <div className="vendor-footer">
                       <div className="vendor-price">
                         <span>{vendor.price}</span>
@@ -222,6 +174,18 @@ export default function BirthdayDecor() {
           </div>
         </div>
       </main>
+
+      {/* Modal */}
+      {modalImage && (
+        <div className="modal-overlay" onClick={closeModal}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="modal-close-btn" onClick={closeModal}>
+              <X />
+            </button>
+            <img src={modalImage} alt="Decor Preview" />
+          </div>
+        </div>
+      )}
     </div>
   );
 }

@@ -154,7 +154,7 @@ export default function AnniversaryDecor() {
 
             <div className="results-list">
               {/* Birthday Decor Services */}
-              {[
+              {[ 
                 {
                   name: "Aesthetic  Events",
                   discount: "20% Off",
